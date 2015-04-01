@@ -1,6 +1,6 @@
 <?php
 /*
-* Plugin Name: Srvd WordPress Plugin
+* Plugin Name: Srvd
 * Description: Srvd WordPress Plugin
 * Version: 1.0.3
 * Author: Srvd 
