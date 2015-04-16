@@ -23,7 +23,7 @@ function form_scripts_method() {
     
     $apiKey = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'srvd_apiKey'");
     
-    wp_enqueue_script( 'form-script', plugins_url().'/Srvd/js/script.js', array('jquery'));
+    wp_enqueue_script( 'form-script', plugins_url('/js/script.js', __FILE__), array('jquery'));
     
     if ($apiKey){
         wp_localize_script( 'form-script', 'hasApiKey',  "true" );
