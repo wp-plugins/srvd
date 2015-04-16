@@ -12,7 +12,7 @@ function downloadPlacements(editor){
 			"apiKey" : apiKey	
 		};
 		$.get(
-			'http://app.srvd.co/get-placement-wp',
+			'https://app.srvd.co/get-placement-wp',
 			data,
 			function(data){
 				if (data.success){
@@ -23,7 +23,7 @@ function downloadPlacements(editor){
 						    {
 								text : value.name,
 								value : '<!--Srvd--><span id="srvd_'+value.type+'_'+value.id+'"></span>'
-										+'<script type="text/javascript" src="//app.srvd.co/placement/'+value.type+'/output/'+value.id+'/srvd.js"></script>',
+										+'<script type="text/javascript" src="https://app.srvd.co/placement/'+value.type+'/output/'+value.id+'/srvd.js"></script>',
 								onclick : function() {
 									editor.insertContent(this.value());
 								}

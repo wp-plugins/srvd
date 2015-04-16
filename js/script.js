@@ -28,7 +28,7 @@ jQuery(function($){
 			};
 		
 		$.post(
-				'http://app.srvd.co/check-api-key',
+				'https://app.srvd.co/check-api-key',
 				datasrvd,
 				function(data){
 					console.log(data)
