@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Srvd
 * Description: Srvd WordPress Plugin
-* Version: 1.0.3
+* Version: 1.0.4
 * Author: Srvd 
 * Author URI: http://www.srvd.co/
 * 
