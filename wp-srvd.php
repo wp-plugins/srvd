@@ -31,7 +31,7 @@ function form_scripts_method() {
         wp_localize_script( 'form-script', 'hasApiKey',  "false" );
     }
     
-    wp_enqueue_style('srvd-icon', plugins_url('/css/srvd_icon.css',__FILE__ ));
+    wp_enqueue_style('srvd-icon', plugins_url('css/srvd_icon.css',__FILE__ ));
     wp_localize_script( 'form-script', 'admin_url',  admin_url( 'admin-ajax.php' ) );
     wp_localize_script( 'form-script', 'plugin_url',  plugins_url('', __FILE__) );
     wp_localize_script( 'form-script', 'apiKey', $apiKey );
