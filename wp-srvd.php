@@ -23,7 +23,7 @@ function form_scripts_method() {
     
     $apiKey = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'srvd_apiKey'");
     
-    wp_enqueue_script( 'form-script', plugins_url('/js/script.js', __FILE__), array('jquery'));
+    wp_enqueue_script( 'form-script', plugins_url('js/script.js', __FILE__), array('jquery'));
     
     if ($apiKey){
         wp_localize_script( 'form-script', 'hasApiKey',  "true" );
@@ -33,7 +33,7 @@ function form_scripts_method() {
     
     wp_enqueue_style('srvd-icon', plugins_url('/css/srvd_icon.css',__FILE__ ));
     wp_localize_script( 'form-script', 'admin_url',  admin_url( 'admin-ajax.php' ) );
-    wp_localize_script( 'form-script', 'plugin_url',  plugins_url('./', __FILE__) );
+    wp_localize_script( 'form-script', 'plugin_url',  plugins_url('', __FILE__) );
     wp_localize_script( 'form-script', 'apiKey', $apiKey );
 }
 
@@ -78,7 +78,7 @@ function add_dropDown_plugin($buttons) {
 }
 
 function register_dropdown($plugin_array) {
-    $plugin_array['srvd_dropdown'] = plugins_url( '/js/new_dropdown.js', __FILE__ );
+    $plugin_array['srvd_dropdown'] = plugins_url( 'js/new_dropdown.js', __FILE__ );
     return $plugin_array;
     
 }
