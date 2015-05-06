@@ -3,7 +3,7 @@ Contributors: srvd
 Donate link: http://www.srvd.co
 Tags: srvd, plugin, admin, geolocation, country, redirection, targeted content, geo, geo coding, geo content, time, os, geo-location, page redirect, redirect, localization, geoip, geo target, geotargeting, geolocate, location, language, url, visits, browser detection, screen size, operating system, date and time, referrer
 Requires at least: 3.0
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
