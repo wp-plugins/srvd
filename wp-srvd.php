@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Srvd
 * Description: Srvd WordPress Plugin
-* Version: 1.0.4
+* Version: 1.0.5
 * Author: Srvd 
 * Author URI: http://www.srvd.co/
 * 
@@ -10,7 +10,7 @@
 
 /**
  * @author BS Technologies SARL <info@bstechnologies.com>
- * @version 1.0
+ * @version 1.0.5
  * @package SRVD WP Plugin
  */
 
@@ -18,11 +18,11 @@
  * load script
  */
 function form_scripts_method() {
-
+ 
     global $wpdb;
-    
-    $apiKey = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'srvd_apiKey'");
-    
+
+    $apiKey = $wpdb->get_var("SELECT option_value FROM ".$wpdb->prefix."options WHERE option_name = 'srvd_apiKey'");
+
     wp_enqueue_script( 'form-script', plugins_url('js/script.js', __FILE__), array('jquery'));
     
     if ($apiKey){
@@ -92,14 +92,15 @@ function setEmail() {
     
     $apiKey = $_POST['apiKey'];
     
-    $wpdb->replace(
-        'wp_options',
+    $count=$wpdb->replace(
+        $wpdb->prefix.'options',
         array(
             'option_name' => 'srvd_apiKey',
             'option_value' => $apiKey,
             
         )    
     );
+
     wp_die();
 }
 
@@ -109,7 +110,8 @@ function setEmail() {
 function script_on_all_page(){
     global $wpdb;
     
-    $apiKey = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'srvd_apiKey'");
+    $apiKey = $wpdb->get_var("SELECT option_value FROM ".$wpdb->prefix."options WHERE option_name = 'srvd_apiKey'");
+
     if($apiKey){
         wp_enqueue_script( 'head-script', "//app.srvd.co/placement/output/".$apiKey."/javascript.js", array('jquery'));
     }
